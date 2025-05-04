@@ -2,74 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meeting Minutes Maker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f8f9fa;
+      font-family: 'Inter', sans-serif;
+      background-color: #f2f4f7;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
+      min-height: 100vh;
+      padding: 20px;
     }
-    .container {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    .card {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       width: 100%;
-      max-width: 400px;
+      max-width: 420px;
       text-align: center;
     }
-    h1 {
+
+    .card h1 {
       font-size: 24px;
+      font-weight: 600;
       margin-bottom: 10px;
-      color: #333;
+      color: #1f2937;
     }
-    p {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 20px;
+
+    .card p {
+      font-size: 15px;
+      color: #4b5563;
+      margin-bottom: 24px;
     }
+
     input[type="file"],
-    input[type="email"],
+    input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
     input[type="submit"] {
       width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      font-size: 14px;
-    }
-    input[type="submit"] {
-      background-color: #007bff;
+      padding: 12px;
+      background-color: #2563eb;
       color: white;
       border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
       cursor: pointer;
+      transition: background-color 0.2s ease;
     }
+
     input[type="submit"]:hover {
-      background-color: #0056b3;
+      background-color: #1d4ed8;
     }
-    footer {
+
+    .footer {
       margin-top: 20px;
-      font-size: 12px;
-      color: #999;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 500px) {
+      .card {
+        padding: 24px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Generate Meeting Minutes</h1>
-    <p>Upload your meeting recording and get clear, structured notes in your inbox.</p>
+  <div class="card">
+    <h1>AI-Powered Meeting Minutes</h1>
+    <p>Upload your recording and get crystal-clear meeting notes, sent to your email.</p>
 
     <form action="/upload" method="POST" enctype="multipart/form-data">
       <input type="file" name="file" accept="audio/*" required>
-      <input type="email" name="email" placeholder="Your email address" required>
+      <input type="email" name="email" placeholder="Enter your email" required>
       <input type="submit" value="Generate Minutes">
     </form>
 
-    <footer>
-      <p>Free for your first 2 meetings.</p>
-    </footer>
+    <div class="footer">
+      <p>Free for your first 2 meetings. Private. No spam. Ever.</p>
+    </div>
   </div>
 </body>
 </html>
