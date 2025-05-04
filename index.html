@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meeting Minutes Maker</title>
+</head>
+<body>
+  <h1>Turn Meeting Recordings Into Minutes</h1>
+  <p>Upload your audio file. We'll send you the meeting summary.</p>
+  <form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" required><br><br>
+    <input type="email" name="email" placeholder="Your email" required><br><br>
+    <input type="submit" value="Generate Minutes">
+  </form>
+</body>
+</html>
