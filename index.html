@@ -1,15 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Meeting Minutes Maker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    input[type="file"],
+    input[type="email"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 14px;
+    }
+    input[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+    footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #999;
+    }
+  </style>
 </head>
 <body>
-  <h1>Turn Meeting Recordings Into Minutes</h1>
-  <p>Upload your audio file. We'll send you the meeting summary.</p>
-  <form action="/upload" method="POST" enctype="multipart/form-data">
-    <input type="file" name="file" required><br><br>
-    <input type="email" name="email" placeholder="Your email" required><br><br>
-    <input type="submit" value="Generate Minutes">
-  </form>
+  <div class="container">
+    <h1>Generate Meeting Minutes</h1>
+    <p>Upload your meeting recording and get clear, structured notes in your inbox.</p>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" accept="audio/*" required>
+      <input type="email" name="email" placeholder="Your email address" required>
+      <input type="submit" value="Generate Minutes">
+    </form>
+
+    <footer>
+      <p>Free for your first 2 meetings.</p>
+    </footer>
+  </div>
 </body>
 </html>
